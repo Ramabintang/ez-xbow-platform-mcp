@@ -129,4 +129,11 @@ go build -o xbow-mcp ./cmd/main.go
 
 ## 贡献
 
+<p align="center">
+<a href="https://github.com/m-sec-org/ez-xbow-platform-mcp/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=m-sec-org/ez-xbow-platform-mcp&max=36" alt="sponsors-list" >
+</a>
+</p>
+
+
 欢迎提出 Issue 和 Pull Request。
