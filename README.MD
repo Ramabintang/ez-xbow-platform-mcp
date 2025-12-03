@@ -2,20 +2,22 @@
 
 一个用于 AI 驱动的渗透测试竞赛的**模型上下文协议 (MCP)** 服务器。该工具提供了一个完整的 API 接口，使 LLM 能够自主参与 CTF 挑战。
 
+> 建议与 [kimi-cli-for-xbow](https://github.com/m-sec-org/kimi-cli-for-xbow) 配合使用，或集成进你自己的 Agent 工作流中
+
 ## 特性
 
-- **挑战管理** - 列出、尝试和提交 CTF 挑战的解决方案
-- **知识库** - 内建涵盖 9 种漏洞类别的 CTF 技术文档
-- **持久化 Kali 容器** - 在隔离环境中执行安全工具（nmap、sqlmap、gobuster 等）
-- **尝试历史** - 通过自动笔记管理，跨会话跟踪和共享发现
-- **多种协议** - 支持 stdio、SSE 和 HTTP/2 流模式
+-   **挑战管理** - 列出、尝试和提交 CTF 挑战的解决方案
+-   **知识库** - 内建涵盖 9 种漏洞类别的 CTF 技术文档
+-   **持久化 Kali 容器** - 在隔离环境中执行安全工具（nmap、sqlmap、gobuster 等）
+-   **尝试历史** - 通过自动笔记管理，跨会话跟踪和共享发现
+-   **多种协议** - 支持 stdio、SSE 和 HTTP/2 流模式
 
 ## 快速开始
 
 ### 前提条件
 
-- Go 1.24.7+
-- 支持 buildx 的 Docker
+-   Go 1.24.7+
+-   支持 buildx 的 Docker
 
 ### 构建
 
@@ -26,6 +28,7 @@ go build -o xbow-mcp ./cmd/main.go
 ### 使用模拟平台运行（测试）
 
 在 `./mock-challenges` 中根据模板创建相应赛题文件。
+
 ```json
 {
     "challenge_code": "XBEN-123-24",
@@ -60,17 +63,17 @@ go build -o xbow-mcp ./cmd/main.go
 
 ## 可用工具
 
-| 工具 | 描述 |
-|------|-------------|
-| `list_challenges` | 获取当前阶段的挑战，包括难度和目标信息 |
-| `do_challenge` | 标记挑战为进行中，并增加尝试计数器 |
-| `get_challenge_hint` | 检索提示（会扣除分数） |
-| `submit_answer` | 提交 Flag 并接收评分结果 |
-| `get_ctf_skill` | 访问技术文档（xss、sql、ssti、ssrf、idor、xxe、lfi、codei、afr&pt） |
-| `write_challenge_note` | 保存发现和尝试记录，供将来参考 |
-| `read_challenge_note` | 查看历史笔记（每 9 次尝试后自动重置） |
-| `kail_terminal` | 在持久化 Kali 容器中执行命令 |
-| `get_terminal_history` | 通过 ID 检索命令执行结果 |
+| 工具                   | 描述                                                                |
+| ---------------------- | ------------------------------------------------------------------- |
+| `list_challenges`      | 获取当前阶段的挑战，包括难度和目标信息                              |
+| `do_challenge`         | 标记挑战为进行中，并增加尝试计数器                                  |
+| `get_challenge_hint`   | 检索提示（会扣除分数）                                              |
+| `submit_answer`        | 提交 Flag 并接收评分结果                                            |
+| `get_ctf_skill`        | 访问技术文档（xss、sql、ssti、ssrf、idor、xxe、lfi、codei、afr&pt） |
+| `write_challenge_note` | 保存发现和尝试记录，供将来参考                                      |
+| `read_challenge_note`  | 查看历史笔记（每 9 次尝试后自动重置）                               |
+| `kail_terminal`        | 在持久化 Kali 容器中执行命令                                        |
+| `get_terminal_history` | 通过 ID 检索命令执行结果                                            |
 
 ## 命令行选项
 
@@ -103,23 +106,22 @@ go build -o xbow-mcp ./cmd/main.go
 
 ```json
 {
-  "mcpServers": {
-    "ezmcp": {
-      "url": "http://127.0.0.1:8080/mcp"
+    "mcpServers": {
+        "ezmcp": {
+            "url": "http://127.0.0.1:8080/mcp"
+        }
     }
-  }
 }
 ```
 
-
 ## 本地存储
 
-- `.challenge_history/{challenge_code}/` - 尝试元数据、笔记和历史记录
-- `.kail-history/` - 命令执行记录
+-   `.challenge_history/{challenge_code}/` - 尝试元数据、笔记和历史记录
+-   `.kail-history/` - 命令执行记录
 
 ## TODO
 
-- 自动编译并启动 XBOW 靶场并配置赛题信息。
+-   自动编译并启动 XBOW 靶场并配置赛题信息。
 
 ## 许可
 
